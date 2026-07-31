@@ -6,6 +6,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"><title>Happy Girlfriend's Day ❤️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+ <audio id="bgMusic" loop preload="auto">
+    <source src="Love.mp3" type="audio/mpeg">
+</audio>
 body{
  font-family:'Poppins',sans-serif;
  min-height:100vh;
@@ -170,6 +173,28 @@ setInterval(()=>{
  document.body.appendChild(e);
  setTimeout(()=>e.remove(),7000);
 },700);
+ const music = document.getElementById("bgMusic");
+
+function startMusic() {
+
+    music.volume = 0;
+    music.play().catch(()=>{});
+
+    let v = 0;
+
+    const fade = setInterval(() => {
+        if (v < 0.5) {
+            v += 0.02;
+            music.volume = v;
+        } else {
+            clearInterval(fade);
+        }
+    }, 120);
+
+}
+
+document.addEventListener("click", startMusic, { once:true });
+document.addEventListener("touchstart", startMusic, { once:true });
 </script>
 </body>
 </html>
