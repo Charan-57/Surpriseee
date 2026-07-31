@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Girlfriend's Day❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+min-height:100vh;display:flex;justify-content:center;align-items:center;
+font-family:Poppins,sans-serif;overflow:hidden;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+background-size:400% 400%;animation:bg 12s ease infinite;
+}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.card{
+    width:min(92vw,420px);
+    min-height:1100px;      /* was around 500-600 */
+    padding:40px 28px 45px;
+
+    background:rgba(255,255,255,.22);
+    backdrop-filter:blur(22px);
+    border-radius:35px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.card:before{content:"";position:absolute;inset:-2px;border-radius:32px;background:linear-gradient(45deg,#ff6b9f,#fff0,#ff9cc5);filter:blur(18px);z-index:-1}
+.emoji{font-size:60px}
+.slider{
+    width:280px;
+    height:340px;
+    margin:25px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:0;
+    visibility:hidden;
+}
+
+.slide.active{
+    opacity:1;
+    visibility:visible;
+}
+.slide.active{opacity:1;transform:scale(1)}
+h1{font-family:"Playfair Display",serif;font-size:34px;color:#5b1634}
+p{margin:15px 0 25px;color:#4f4f4f}
+.buttons{display:flex;gap:18px;justify-content:center}
+button{border:none;padding:14px 32px;border-radius:999px;font-size:18px;cursor:pointer;transition:.3s}
+#yes{background:#ff4f7d;color:#fff;box-shadow:0 10px 25px rgba(255,79,125,.4)}
+#yes:hover{transform:translateY(-4px)}
+#no{background:#fff;color:#666;position:relative}
+.float{position:fixed;pointer-events:none;animation:rise linear forwards}
+@keyframes rise{from{transform:translateY(0) scale(.8);opacity:1}to{transform:translateY(-120vh) scale(1.8);opacity:0}}
+.quote{font-style:italic;color:#424242;height:30px}
+@media(max-width:500px){
+.slider{width:180px;height:180px}
+h1{font-size:28px}
+}
+@keyframes slideRight{
+from{
+opacity:0;
+transform:translateX(100%) scale(1.1);
+}
+to{
+opacity:1;
+transform:translateX(0) scale(1);
+}
+}
+
+@keyframes slideLeft{
+from{
+opacity:0;
+transform:translateX(-100%) scale(1.1);
+}
+to{
+opacity:1;
+transform:translateX(0) scale(1);
+}
+}
+
+@keyframes zoomIn{
+from{
+opacity:0;
+transform:scale(1.4);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes zoomOut{
+from{
+opacity:0;
+transform:scale(.6);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes rotateIn{
+from{
+opacity:0;
+transform:rotate(-10deg) scale(.8);
+}
+to{
+opacity:1;
+transform:rotate(0) scale(1);
+}
+}
+
+@keyframes flip{
+from{
+opacity:0;
+transform:rotateY(90deg);
+}
+to{
+opacity:1;
+transform:rotateY(0);
+}
+}
+
+@keyframes blurIn{
+from{
+opacity:0;
+filter:blur(15px);
+transform:scale(1.2);
+}
+to{
+opacity:1;
+filter:blur(0);
+transform:scale(1);
+}
+}
+
+@keyframes bounce{
+0%{
+opacity:0;
+transform:translateY(80px);
+}
+60%{
+transform:translateY(-15px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes spinZoom{
+from{
+opacity:0;
+transform:rotate(25deg) scale(1.5);
+}
+to{
+opacity:1;
+transform:rotate(0) scale(1);
+}
+}
+h1{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+#typing{
+    margin-bottom:25px;
+}
+
+.quote{
+    margin-top:30px;
+    padding:0 15px;
+    line-height:1.7;
+}
+body{
+    padding:25px 15px;
+}
+h1{
+    font-size:42px;
+}
+
+#typing{
+    font-size:20px;
+}
+
+.quote{
+    font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="emoji">🫶💖</div>
+
+<div class="slider">
+<img class="slide active" src="1.jpeg">
+<img class="slide" src="2.jpeg">
+<img class="slide" src="3.jpeg">
+<img class="slide" src="4.jpeg">
+<img class="slide" src="5.jpeg">
+<img class="slide" src="6.jpeg">
+<img class="slide" src="7.jpeg">
+<img class="slide" src="8.jpeg">
+<img class="slide" src="9.jpeg">
+<img class="slide" src="10.jpeg">
+<img class="slide" src="12.jpeg">
+<img class="slide" src="13.jpeg">
+</div>
+
+<h1>Vaishuuu❤️</h1>
+<p id="typing"></p>
+
+
+<br>
+<div class="quote" id="quote"></div>
+</div>
+
+<script>
+const msgs=[
+"Happy Girlfriend's Day Bangarammm💕",
+"You make my life beautiful🌸",
+"Love you till the end❤️"
+];
+let i=0,j=0;
+function type(){
+const el=document.getElementById("typing");
+if(j<=msgs[i].length){el.textContent=msgs[i].slice(0,j++);}
+else{setTimeout(()=>{j=0;i=(i+1)%msgs.length;el.textContent="";type();},1800);return;}
+setTimeout(type,80);
+}
+type();
+
+document.getElementById("quote").innerHTML =
+`Dear Vaishu💖,
+
+Thank you for making
+my life brighter,
+my heart happier,
+and my world more beautiful💝.<br>
+Loving u since many years, will love u till the end🫶.<br>
+I proudly and happily say that in all this chaos in my life you're the BEST THING that happened to me🎁💞.<br>
+I love You❤️`;
+
+const slides = document.querySelectorAll(".slide");
+
+const animations = [
+"slideRight",
+"slideLeft",
+"zoomOut",
+"zoomIn",
+"rotateIn",
+"flip",
+"blurIn",
+"bounce",
+"fade",
+"spinZoom"
+];
+
+let current = 0;
+
+slides[0].classList.add("active");
+
+function nextSlide(){
+
+    slides[current].classList.remove("active");
+    slides[current].style.animation="";
+
+    current++;
+
+    if(current>=slides.length){
+        current=0;
+    }
+
+    slides[current].classList.add("active");
+
+    slides[current].style.animation =
+        animations[current % animations.length] + " 1.3s ease";
+}
+
+setInterval(nextSlide,3500);
+
+function floatThing(){
+const e=document.createElement("div");
+e.className="float";
+e.innerHTML=["❤️","💖","🌸","✨","❤️"][Math.floor(Math.random()*5)];
+e.style.left=Math.random()*100+"vw";
+e.style.bottom="-30px";
+e.style.fontSize=(20+Math.random()*30)+"px";
+e.style.animationDuration=(5+Math.random()*4)+"s";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),9000);
+}
+setInterval(floatThing,700);
+</script>
+</body>
+</html>
